@@ -1,8 +1,10 @@
 # SUKU Token
-ERC20 Token with 1404 Restrictions
+ERC20 Token based on [ERC 1404](https://github.com/ethereum/eips/issues/1404)
+
+> **Note:** The ERC1404 restrictions have been disabled for the [deployed contract on mainnet](https://ropsten.etherscan.io/token/0xf2ce74489addc0a57392846fea18a7f8b1da19fe). Tokens transfers are fully functional without any restrictions. This is a one-way function, i.e. restrictions cannot be reactivated. 
 
 ## Use Case
-The SUKU token is an ERC20 compatible token with transfer restrictions added that follow the ERC1404 standard. The 1404 Restrictions will use whitelists to segregate groups of accounts so they are only allowed to transfer to designated destination addresses. At some point in the future, the transfer restrictions will need to be lifted and let any transfers succeed to/from any accounts.
+The SUKU token is an ERC20 compatible token that follows the ERC1404 standard. The 1404 Restrictions have been waived for [on mainnet](https://ropsten.etherscan.io/token/0xf2ce74489addc0a57392846fea18a7f8b1da19fe) to let any transfers succeed to/from any accounts. This is a one-way function, i.e. restrictions cannot be reactivated. 
 
 ## Token
 All token features will be determined at deploy time, locking them in place.
@@ -30,6 +32,9 @@ The Issuer account can add and remove other account addresses to a list of Admin
 Once an account has been added to the Administrators list, the administrator can add/remove accounts to/from any of the whitelists. They can also enable/disable transfers between whitelists.
 
 ## Whitelists
+
+> **Note:** The whitelisting restrictions have been disabled for the [deployed contract on mainnet](https://ropsten.etherscan.io/token/0xf2ce74489addc0a57392846fea18a7f8b1da19fe).
+
 Before tokens can be transferred to a new address, it must be validated that the source is allowed to send to that desitnation address. If the sending client does not check this in advance and sends an invalid transfer, the transfer functionality will fail and the transaction will revert.
 
 The Issuer account will have the ability to transfer tokens to any address, regardless of whether restrictions are enabled or the whitelist configuration state. The Issuer is not gated by any of the restriction logic.
